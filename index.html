@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>온라인 튜토리얼</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Products.</a>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Store</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </header>
+    <section class="banner">
+      <div class="imgBx">
+        <img src="images/img1.jpg" alt="" class="active" />
+        <img src="images/img2.jpg" alt="" />
+        <img src="images/img3.jpg" alt="" />
+        <img src="images/img4.jpg" alt="" />
+      </div>
+
+      <div class="contentBx">
+        <div class="active">
+          <h2>Slide Text One</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
+            necessitatibus eius eveniet quos officiis possimus.
+          </p>
+          <a href="#">Details</a>
+        </div>
+        <div>
+          <h2>Slide Text Two</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
+            necessitatibus eius eveniet quos officiis possimus.
+          </p>
+          <a href="#">Details</a>
+        </div>
+        <div>
+          <h2>Slide Text Three</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
+            necessitatibus eius eveniet quos officiis possimus.
+          </p>
+          <a href="#">Details</a>
+        </div>
+        <div>
+          <h2>Slide Text Four</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
+            necessitatibus eius eveniet quos officiis possimus.
+          </p>
+          <a href="#">Details</a>
+        </div>
+      </div>
+      <ul class="controls">
+        <li onclick='prev()'></li>
+        <li onclick="next()"></li>
+      </ul>
+    </section>
+    <script>
+
+      const imgBxs = document.querySelectorAll(".imgBx img");
+      const contentBxs = document.querySelectorAll(".contentBx div");
+      let index = 0;
+
+      function prev(){
+        imgBxs[index].classList.remove("active");
+        contentBxs[index].classList.remove("active");
+        
+        index = (index - 1 + imgBxs.length) % imgBxs.length; //  -1 
+
+        imgBxs[index].classList.add("active");
+        contentBxs[index].classList.add("active");
+      }
+
+      function next(){
+        imgBxs[index].classList.remove("active");
+        contentBxs[index].classList.remove("active");
+
+        index = (index + 1) % imgBxs.length; // 1증가 
+        
+        imgBxs[index].classList.add("active");
+        contentBxs[index].classList.add("active");
+      }
+    </script>
+      
+    </script>
+  </body>
+</html>
